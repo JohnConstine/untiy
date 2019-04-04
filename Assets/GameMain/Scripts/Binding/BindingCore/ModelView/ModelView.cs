@@ -66,5 +66,12 @@ namespace SG1
 
             return m_CacheCollections[path];
         }
+
+        public void ClearAllCache()
+        {
+            m_CacheCollections.Clear();
+            m_CacheProperties.Clear();
+            m_CacheActions.Clear();
+        }
     }
 }

@@ -6,7 +6,7 @@ namespace SG1
     public class ItemModelView : ModelView
     {
         [SerializeField] [InspectorReadOnly(InspectorDiplayMode.DisabledInPlayMode)]
-        private readonly List<BaseBinding> m_CacheBindings = new List<BaseBinding>();
+        private List<BaseBinding> m_CacheBindings = new List<BaseBinding>();
 
         [SerializeField] [InspectorReadOnly] private int m_Index;
 

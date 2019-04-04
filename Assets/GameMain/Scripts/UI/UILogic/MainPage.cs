@@ -179,7 +179,7 @@ namespace SG1
             {
                 Model.Item.Add(new Item() {name = i.ToString()});
             }
-            for (int j = 0; j < 8; j++)
+            for (int j = 0; j < 100; j++)
             {
                 Model.Loop.Add(new Item(){name = j.ToString()});
             }
