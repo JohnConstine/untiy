@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace SG1
@@ -12,7 +13,7 @@ namespace SG1
 
         [SerializeField] private float m_ClickInterval = 0.5f;
 
-        public Button Button;
+        [SerializeField, InspectorReadOnly] private Button m_Button;
 
         public bool Block
         {
@@ -26,28 +27,18 @@ namespace SG1
             set { m_ClickInterval = value; }
         }
 
-        private void Reset()
+        public Button Button
         {
-            OnValidate();
+            get { return m_Button; }
+            set { m_Button = value; }
         }
-        
-        private void OnValidate()
+
+        protected override void Awake()
         {
-            if (Button == null)
-            {
-                Button = GetComponent<Button>();
-            }
+            base.Awake();
+            m_Button.onClick.AddListener(OnClick);
         }
-        
-        private void Awake()
-        {
-            OnValidate();
-            if (Button != null)
-            {
-                Button.onClick.AddListener(OnClick);
-            }
-        }
-        
+
         private void OnClick()
         {
             if (m_Action != null && !Block)
@@ -56,6 +47,15 @@ namespace SG1
                 if (interval < ClickInterval) return;
                 m_LastClickTime = Time.realtimeSinceStartup;
                 m_Action.Invoke();
+            }
+        }
+
+        protected override void OnEditorValue()
+        {
+            base.OnEditorValue();
+            if (m_Button == null)
+            {
+                m_Button = GetComponent<Button>();
             }
         }
     }

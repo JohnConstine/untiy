@@ -161,7 +161,7 @@ namespace DG.Tweening
 #endif
                     break;
                 case TargetType.Rigidbody:
-#if true // PHYSICS_MARKER
+#if false // PHYSICS_MARKER
                     tween = ((Rigidbody)target).DOMove(endValueV3, duration, optionalBool0);
 #else
                     tween = ((Transform)target).DOMove(endValueV3, duration, optionalBool0);
@@ -185,7 +185,7 @@ namespace DG.Tweening
                     tween = ((Transform)target).DORotate(endValueV3, duration, optionalRotationMode);
                     break;
                 case TargetType.Rigidbody:
-#if true // PHYSICS_MARKER
+#if false // PHYSICS_MARKER
                     tween = ((Rigidbody)target).DORotate(endValueV3, duration, optionalRotationMode);
 #else
                     tween = ((Transform)target).DORotate(endValueV3, duration, optionalRotationMode);
@@ -232,7 +232,7 @@ namespace DG.Tweening
                 case TargetType.Light:
                     tween = ((Light)target).DOColor(endValueColor, duration);
                     break;
-#if true // SPRITE_MARKER
+#if false // SPRITE_MARKER
                 case TargetType.SpriteRenderer:
                     tween = ((SpriteRenderer)target).DOColor(endValueColor, duration);
                     break;
@@ -272,7 +272,7 @@ namespace DG.Tweening
                 case TargetType.Light:
                     tween = ((Light)target).DOIntensity(endValueFloat, duration);
                     break;
-#if true // SPRITE_MARKER
+#if false // SPRITE_MARKER
                 case TargetType.SpriteRenderer:
                     tween = ((SpriteRenderer)target).DOFade(endValueFloat, duration);
                     break;
@@ -592,7 +592,7 @@ namespace DG.Tweening
             int dotIndex = str.LastIndexOf(".");
             if (dotIndex != -1) str = str.Substring(dotIndex + 1);
             if (str.IndexOf("Renderer") != -1 && (str != "SpriteRenderer")) str = "Renderer";
-#if !true // PHYSICS_MARKER
+#if !false // PHYSICS_MARKER
             if (str == "Rigidbody") str = "Transform";
 #endif
 #if !true // PHYSICS2D_MARKER

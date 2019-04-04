@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using GameFramework;
+using JetBrains.Annotations;
 using UnityGameFramework.Runtime;
 
 namespace SG1
@@ -8,14 +9,6 @@ namespace SG1
     public class Collection<T> : Collection where T : ItemContext
     {
         private readonly List<T> m_Items = new List<T>();
-
-        private EventHandler<int> m_OnItemRemove;
-
-        private EventHandler<T> m_OnItemSelect;
-
-        private EventHandler<T> m_OnItemInsert;
-
-        private EventHandler<Collection<T>> m_OnItemClear;
 
         private T m_SelectedItem;
 
@@ -25,32 +18,6 @@ namespace SG1
         {
             get { return m_SelectedItem; }
         }
-
-        public event EventHandler<int> OnItemRemove
-        {
-            add { m_OnItemRemove += value; }
-            remove { m_OnItemRemove -= value; }
-        }
-
-
-        public event EventHandler<T> OnItemSelect
-        {
-            add { m_OnItemSelect += value; }
-            remove { m_OnItemSelect -= value; }
-        }
-
-        public event EventHandler<T> OnItemInsert
-        {
-            add { m_OnItemInsert += value; }
-            remove { m_OnItemInsert -= value; }
-        }
-
-        public event EventHandler<Collection<T>> OnItemClear
-        {
-            add { m_OnItemClear += value; }
-            remove { m_OnItemClear -= value; }
-        }
-
 
         public IEnumerable<T> Items
         {
@@ -67,9 +34,19 @@ namespace SG1
             get { return m_Items.Count; }
         }
 
+        public override ItemContext GetBaseItem(int index)
+        {
+            return GetItem(index);
+        }
+
+        public override IEnumerable<ItemContext> BaseItemContexts
+        {
+            get { return m_Items; }
+        }
+
         public T GetItem(int index)
         {
-            if (!IsEffectiveIndex(index))
+            if (!(index >= 0 && index < m_Items.Count))
             {
                 return (T) null;
             }
@@ -77,26 +54,31 @@ namespace SG1
             return m_Items[index];
         }
 
-        public bool Remove(int index)
+        public override bool Remove(int index)
         {
-            if (!IsEffectiveIndex(index))
+            if (!(index >= 0 && index < m_Items.Count))
             {
                 return false;
             }
 
             m_Items[index].OnItemClick -= Select;
 
-            m_OnItemRemove.Invoke(this, index);
-
             m_Items.RemoveAt(index);
 
             UpdateIndex();
+
+            InvokeOnItemRemove(index);
 
             return true;
         }
 
         public bool Remove(T item)
         {
+            if (item == null)
+            {
+                return false;
+            }
+
             for (int i = 0; i < m_Items.Count; i++)
             {
                 if (m_Items[i] != item)
@@ -116,9 +98,14 @@ namespace SG1
             Insert(m_Items.Count, item);
         }
 
-        public void Insert(int index, T item)
+        public void Insert(int index, [NotNull] T item)
         {
-            if (!IsEffectiveIndex(index))
+            if (item == null)
+            {
+                throw new ArgumentNullException(nameof(item));
+            }
+
+            if (!(index >= 0 && index < m_Items.Count))
             {
                 index = m_Items.Count;
             }
@@ -126,26 +113,22 @@ namespace SG1
             item.OnItemClick += Select;
             item.Index = index;
             m_Items.Insert(index, item);
-            m_OnItemInsert.Invoke(this, item);
+            UpdateIndex();
+            InvokeOnItemInsert(index, item);
         }
 
-        public bool IsEffectiveIndex(int index)
-        {
-            return index > 0 || index <= m_Items.Count;
-        }
-
-        private void Select(object sender, ItemContext e)
+        private void Select(ItemContext itemContext)
         {
             if (m_SelectedItem == m_LastSelectedItem)
             {
                 return;
             }
 
-            m_SelectedItem = (T) e;
+            m_SelectedItem = itemContext as T;
 
             m_LastSelectedItem = m_SelectedItem;
 
-            m_OnItemSelect.Invoke(this, m_SelectedItem);
+            InvokeOnItemSelect(m_SelectedItem);
         }
 
         private void UpdateIndex()
@@ -158,8 +141,8 @@ namespace SG1
 
         public void Clear()
         {
-            m_OnItemClear.Invoke(this, this);
             m_Items.Clear();
+            InvokeOnItemClear();
         }
 
         public override string ToString()

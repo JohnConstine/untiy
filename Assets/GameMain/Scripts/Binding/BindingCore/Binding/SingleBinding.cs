@@ -1,15 +1,16 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace SG1
 {
     public abstract class SingleBinding : BaseBinding
     {
-        [SerializeField] private string m_Paht = string.Empty;
+        [InspectorReadOnly(InspectorDiplayMode.EnabledInPlayMode)]
+        [SerializeField] private string m_Path = string.Empty;
 
         public string Path
         {
-            get { return m_Paht; }
-            set { m_Paht = value; }
+            get { return m_Path; }
         }
     }
 }

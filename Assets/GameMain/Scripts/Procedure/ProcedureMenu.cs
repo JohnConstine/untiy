@@ -16,6 +16,7 @@ namespace SG1
         {
             base.OnEnter(procedureOwner);
 
+//            GameEntry.UI.OpenUIForm(UIFormId.TestPage, this);
             GameEntry.UI.OpenUIForm(UIFormId.MainPage, this);
         }
     }

@@ -11,6 +11,8 @@ namespace SG1
     {
         private readonly Dictionary<string, Property> m_Properties = new Dictionary<string, Property>();
 
+        private readonly Dictionary<string, Collection> m_Collections = new Dictionary<string, Collection>();
+
         public void SetPropertyValue(string propertyName, object value)
         {
             if (m_Properties.ContainsKey(propertyName))
@@ -96,6 +98,35 @@ namespace SG1
             }
 
             return m_Properties[propertyName];
+        }
+
+        public Collection FindCollection(string collectionName)
+        {
+            if (!m_Collections.ContainsKey(collectionName))
+            {
+                var fieldInfo = GetType().GetField(Utility.Text.Format("_private{0}Collection", collectionName),
+                    BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
+                if (fieldInfo != null)
+                {
+                    m_Collections.Add(collectionName, fieldInfo.GetValue(this) as Collection);
+                }
+                else
+                {
+                    PropertyInfo propertyInfo = GetType().GetProperty(
+                        Utility.Text.Format("{0}Collection", collectionName),
+                        BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+                    if (propertyInfo != null)
+                    {
+                        m_Collections.Add(collectionName, propertyInfo.GetValue(this, null) as Collection);
+                    }
+                    else
+                    {
+                        m_Collections.Add(collectionName, null);
+                    }
+                }
+            }
+
+            return m_Collections[collectionName];
         }
 
         public void AddPropertyRuntime(string propertyName, Type type)

@@ -214,7 +214,7 @@ namespace SG1
                 return;
             }
 
-            Log.Info("Network channel '{0}' connected, local address '{1}:{2}', remote address '{3}:{4}'.", ne.NetworkChannel.Name, ne.NetworkChannel.LocalIPAddress, ne.NetworkChannel.LocalPort.ToString(), ne.NetworkChannel.RemoteIPAddress, ne.NetworkChannel.RemotePort.ToString());
+            Log.Info("Network channel '{0}' connected.", ne.NetworkChannel.Name);
         }
 
         private void OnNetworkClosed(object sender, GameEventArgs e)

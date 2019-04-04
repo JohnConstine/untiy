@@ -5,9 +5,9 @@ namespace SG1
 {
     public abstract class UGuiFormPage : UGuiForm, IContext
     {
-        [SerializeField] private ModelView m_ModelView;
+        [SerializeField] private RootModelView m_ModelView;
 
-        public ModelView ModelView
+        public RootModelView ModelView
         {
             get { return m_ModelView; }
             set { m_ModelView = value; }
@@ -32,6 +32,11 @@ namespace SG1
         public Property FindProperty(string propertyName)
         {
             return m_Context == null ? null : m_Context.FindProperty(propertyName);
+        }
+
+        public Collection FindCollection(string collectionName)
+        {
+            return m_Context == null ? null : m_Context.FindCollection(collectionName);
         }
 
         public void AddPropertyRuntime(string propertyName, Type type)

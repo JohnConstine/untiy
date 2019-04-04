@@ -1,12 +1,13 @@
 ﻿using System;
+using UnityEngine;
 
 namespace SG1
 {
-	public abstract class Property : EventArgs
+	public abstract class Property
 	{
-		private event EventHandler<Property> m_OnValueChange;
+		private event Action m_OnValueChange;
 		
-		public event EventHandler<Property> OnValueChange
+		public event Action OnValueChange
 		{
 			add
 			{
@@ -22,8 +23,10 @@ namespace SG1
 		{
 			if (m_OnValueChange != null)
 			{
-				m_OnValueChange.Invoke(this, this);
+				m_OnValueChange.Invoke();
 			}
 		}
+
+		public abstract object GetRowValue();
 	}
 }

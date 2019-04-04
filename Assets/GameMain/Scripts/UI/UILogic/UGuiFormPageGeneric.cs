@@ -1,19 +1,21 @@
 namespace SG1
 {
-    public class UGuiFormPage<T1,T2> : UGuiFormPage where T1:UGuiFormPage<T1,T2> where T2 : UGuiFormModel<T1,T2>, new()
+    public abstract class UGuiFormPage<T1, T2> : UGuiFormPage
+        where T1 : UGuiFormPage<T1, T2>
+        where T2 : UGuiFormModel<T1, T2>, new()
     {
-        private T2 m_UGuiFormModel;
+        private T2 m_Model;
 
-        public T2 UGuiFormModel
+        public T2 Model
         {
-            get { return m_UGuiFormModel; }
+            get { return m_Model; }
         }
-                
+
         private void Awake()
         {
-            m_UGuiFormModel = new T2();
-            m_UGuiFormModel.SetUGuiFormPage((T1) this);
-            Context = m_UGuiFormModel;
+            m_Model = new T2();
+            m_Model.SetUGuiFormPage((T1) this);
+            Context = m_Model;
             ModelView.SetContext(Context);
         }
     }

@@ -71,8 +71,9 @@ namespace SG1
                 }
             }
 
-            procedureOwner.SetData<VarInt>(Constant.ProcedureData.NextSceneId, GameEntry.Config.GetInt("Scene.Menu"));
-            ChangeState<ProcedureChangeScene>(procedureOwner);
+            ChangeState<ProcedureMenu>(procedureOwner);
+//            procedureOwner.SetData<VarInt>(Constant.ProcedureData.NextSceneId, GameEntry.Config.GetInt("Scene.Menu"));
+//            ChangeState<ProcedureChangeScene>(procedureOwner);
         }
 
         private void PreloadResources()

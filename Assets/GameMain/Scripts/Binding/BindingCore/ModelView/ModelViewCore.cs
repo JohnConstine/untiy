@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace SG1
 {
-    public class ModelViewCore : MonoBehaviour
+    public abstract class ModelViewCore : UICustomBehaviour
     {
         public delegate T Converter<out T>(IContext node, string path);
 
@@ -32,13 +32,7 @@ namespace SG1
 
         protected static Collection NodeToCollection(IContext context, string path)
         {
-            if (context == null)
-            {
-                return (Collection)null;
-            }
-
-            var propertyInfo = context.GetType().GetProperty(path);
-            return propertyInfo == null ? (Collection)null : (Collection) propertyInfo.GetValue(context, null);
+            return context == null ? (Collection) null : context.FindCollection(path);
         }
 
         protected static T Find<T>(IContext context, string path, Converter<T> converter)

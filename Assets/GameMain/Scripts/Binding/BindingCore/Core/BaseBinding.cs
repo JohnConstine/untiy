@@ -1,33 +1,39 @@
-using System;
 using UnityEngine;
 
 namespace SG1
 {
-    public abstract class BaseBinding : MonoBehaviour, IBaseBinding
+    public abstract class BaseBinding : UICustomBehaviour, IBaseBinding
     {
         [SerializeField] private ModelView m_ModelView;
 
         public ModelView ModelView
         {
-            get { return m_ModelView; }
+            get { return m_ModelView != null ? m_ModelView : m_ModelView = GetComponentInParent<ModelView>(); }
             set { m_ModelView = value; }
         }
 
         private bool m_Binded;
 
-        protected bool m_IgnoreChanges;
+        private bool m_IgnoreChanges;
 
         protected abstract bool Bind();
 
         protected abstract void Unbind();
 
+        public bool Binded
+        {
+            get { return m_Binded; }
+        }
+
+        public bool IgnoreChanges
+        {
+            get { return m_IgnoreChanges; }
+            protected set { m_IgnoreChanges = value; }
+        }
+
         public void OnContextChange()
         {
             UpdateBinding();
-        }
-
-        public virtual void OnChange()
-        {
         }
 
         internal void UpdateBinding()
@@ -40,7 +46,7 @@ namespace SG1
             }
         }
 
-        protected virtual void Start()
+        protected override void Start()
         {
             if (!m_Binded)
             {
@@ -52,15 +58,12 @@ namespace SG1
             }
         }
 
-        protected virtual void OnDestroy()
+        protected override void OnDestroy()
         {
             Unbind();
         }
-
-        protected ModelView GetModelView()
-        {
-            return m_ModelView != null ? m_ModelView : m_ModelView = GetComponentInParent<ModelView>();
-        }
+        
+        protected abstract void OnChange();
 
         public string GetTextValue(Property property)
         {
@@ -129,27 +132,28 @@ namespace SG1
                     ((Property<double>) property).SetValue(v);
                 }
             }
-            else if (property is Property<long>)
-            {
-                if (long.TryParse(value, out var v))
-                {
-                    ((Property<long>) property).SetValue(v);
-                }
-            }
-            else if (property is Property<short>)
-            {
-                if (short.TryParse(value, out var v))
-                {
-                    ((Property<short>) property).SetValue(v);
-                }
-            }
-            else if (property is Property<byte>)
-            {
-                if (byte.TryParse(value, out var v))
-                {
-                    ((Property<byte>) property).SetValue(v);
-                }
-            }
+
+//            else if (property is Property<long>)
+//            {
+//                if (long.TryParse(value, out var v))
+//                {
+//                    ((Property<long>) property).SetValue(v);
+//                }
+//            }
+//            else if (property is Property<short>)
+//            {
+//                if (short.TryParse(value, out var v))
+//                {
+//                    ((Property<short>) property).SetValue(v);
+//                }
+//            }
+//            else if (property is Property<byte>)
+//            {
+//                if (byte.TryParse(value, out var v))
+//                {
+//                    ((Property<byte>) property).SetValue(v);
+//                }
+//            }
         }
 
         public double GetNumericValue(Property property)
@@ -170,6 +174,7 @@ namespace SG1
             {
                 return ((Property<double>) property).GetValue();
             }
+
 //            else if (property is Property<long>)
 //            {
 //                return ((Property<long>) property).GetValue();
@@ -199,6 +204,7 @@ namespace SG1
             {
                 ((Property<double>) property).SetValue(val);
             }
+
 //            else if (property is Property<long> _)
 //            {
 //                ((Property<long>) property).SetValue((long) val);
@@ -211,6 +217,11 @@ namespace SG1
 //            {
 //                ((Property<byte>) property).SetValue((byte) val);
 //            }
+        }
+
+        public object GetRowValue(Property property)
+        {
+            return property.GetRowValue();
         }
     }
 }

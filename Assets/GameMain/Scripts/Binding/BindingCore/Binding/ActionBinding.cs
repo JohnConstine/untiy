@@ -28,5 +28,10 @@ namespace SG1
 
             return m_IsCommandFound;
         }
+
+        protected override void OnChange()
+        {
+            
+        }
     }
 }

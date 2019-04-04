@@ -9,6 +9,8 @@ namespace SG1
 
         Property FindProperty(string propertyName);
 
+        Collection FindCollection(string collectionName);
+
         void AddPropertyRuntime(string propertyName, Type type);
     }
 }

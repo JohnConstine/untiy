@@ -11,49 +11,51 @@ namespace SG1
     {
         private readonly Dictionary<string, Property> m_Properties = new Dictionary<string, Property>();
 
+        private readonly Dictionary<string, Collection> m_Collections = new Dictionary<string, Collection>();
+
         public void SetPropertyValue(string propertyName, object value)
         {
             if (m_Properties.ContainsKey(propertyName))
             {
                 if (value is bool)
                 {
-                    SetPropertyValue(m_Properties[propertyName] as Property<bool>, (bool)value);
+                    SetPropertyValue(m_Properties[propertyName] as Property<bool>, (bool) value);
                 }
                 else if (value is Color)
                 {
-                    SetPropertyValue(m_Properties[propertyName] as Property<Color>, (Color)value);
+                    SetPropertyValue(m_Properties[propertyName] as Property<Color>, (Color) value);
                 }
                 else if (value is Color32)
                 {
-                    SetPropertyValue(m_Properties[propertyName] as Property<Color32>, (Color32)value);
+                    SetPropertyValue(m_Properties[propertyName] as Property<Color32>, (Color32) value);
                 }
                 else if (value is double)
                 {
-                    SetPropertyValue(m_Properties[propertyName] as Property<double>, (double)value);
+                    SetPropertyValue(m_Properties[propertyName] as Property<double>, (double) value);
                 }
                 else if (value is float)
                 {
-                    SetPropertyValue(m_Properties[propertyName] as Property<float>, (float)value);
+                    SetPropertyValue(m_Properties[propertyName] as Property<float>, (float) value);
                 }
                 else if (value is int)
                 {
-                    SetPropertyValue(m_Properties[propertyName] as Property<int>, (int)value);
+                    SetPropertyValue(m_Properties[propertyName] as Property<int>, (int) value);
                 }
                 else if (value is Quaternion)
                 {
-                    SetPropertyValue(m_Properties[propertyName] as Property<Quaternion>, (Quaternion)value);
+                    SetPropertyValue(m_Properties[propertyName] as Property<Quaternion>, (Quaternion) value);
                 }
                 else if (value is string)
                 {
-                    SetPropertyValue(m_Properties[propertyName] as Property<string>, (string)value);
+                    SetPropertyValue(m_Properties[propertyName] as Property<string>, (string) value);
                 }
                 else if (value is Vector2)
                 {
-                    SetPropertyValue(m_Properties[propertyName] as Property<Vector2>, (Vector2)value);
+                    SetPropertyValue(m_Properties[propertyName] as Property<Vector2>, (Vector2) value);
                 }
                 else if (value is Vector3)
                 {
-                    SetPropertyValue(m_Properties[propertyName] as Property<Vector3>, (Vector3)value);
+                    SetPropertyValue(m_Properties[propertyName] as Property<Vector3>, (Vector3) value);
                 }
             }
             else
@@ -74,15 +76,15 @@ namespace SG1
         {
             if (!m_Properties.ContainsKey(propertyName))
             {
-                var fieldInfo = GetType().GetField(Utility.Text.Format("_private{0}Property", propertyName),
+                FieldInfo fieldInfo = GetType().GetField(Utility.Text.Format("_private{0}Property", propertyName),
                     BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
                 if (fieldInfo != null)
                 {
-                    m_Properties.Add(propertyName,fieldInfo.GetValue(this) as Property);
+                    m_Properties.Add(propertyName, fieldInfo.GetValue(this) as Property);
                 }
                 else
                 {
-                    var propertyInfo = GetType().GetProperty(Utility.Text.Format("{0}Property",propertyName),
+                    PropertyInfo propertyInfo = GetType().GetProperty(Utility.Text.Format("{0}Property", propertyName),
                         BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
                     if (propertyInfo != null)
                     {
@@ -94,8 +96,37 @@ namespace SG1
                     }
                 }
             }
-            
+
             return m_Properties[propertyName];
+        }
+
+        public Collection FindCollection(string collectionName)
+        {
+            if (!m_Collections.ContainsKey(collectionName))
+            {
+                var fieldInfo = GetType().GetField(Utility.Text.Format("_private{0}Collection", collectionName),
+                    BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
+                if (fieldInfo != null)
+                {
+                    m_Collections.Add(collectionName, fieldInfo.GetValue(this) as Collection);
+                }
+                else
+                {
+                    PropertyInfo propertyInfo = GetType().GetProperty(
+                        Utility.Text.Format("{0}Collection", collectionName),
+                        BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+                    if (propertyInfo != null)
+                    {
+                        m_Collections.Add(collectionName, propertyInfo.GetValue(this, null) as Collection);
+                    }
+                    else
+                    {
+                        m_Collections.Add(collectionName, null);
+                    }
+                }
+            }
+
+            return m_Collections[collectionName];
         }
 
         public void AddPropertyRuntime(string propertyName, Type type)

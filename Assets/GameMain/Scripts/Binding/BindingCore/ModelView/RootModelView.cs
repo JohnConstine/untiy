@@ -6,10 +6,15 @@ namespace SG1
 {
     public class RootModelView : ModelView
     {
-        [InspectorButton(InspectorDiplayMode.DisabledInPlayMode,"SetContextValue")]
-        public void SetValueInEditor()
+        [InspectorButton(InspectorDiplayMode.DisabledInPlayMode, "SetContextValue")]
+        protected override void OnEditorValue()
         {
-            var bindings = new List<BaseBinding>();
+            base.OnEditorValue();
+            UGuiFormPage uGuiFormPage = GetComponent<UGuiFormPage>();
+
+            uGuiFormPage.ModelView = this;
+
+            List<BaseBinding> bindings = new List<BaseBinding>();
             gameObject.GetComponentsInChildren(bindings);
 
             foreach (var binding in bindings)
@@ -17,15 +22,18 @@ namespace SG1
                 binding.ModelView = binding.enabled ? this : null;
             }
         }
-
-        private void OnValidate()
+        
+        public bool SetContext(IContext context)
         {
-            SetValueInEditor();
-        }
+            if (context == null)
+            {
+                Log.Error("{0} : {1} is invalid", gameObject.name, "Context");
+                return false;
+            }
 
-        private void Reset()
-        {
-            OnValidate();
+            Context = context;
+            
+            return true;
         }
     }
 }

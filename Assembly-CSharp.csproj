@@ -78,20 +78,48 @@
     <Compile Include="Assets\GameMain\Scripts\Base\GameEntry.cs" />
     <Compile Include="Assets\GameMain\Scripts\Base\GameEntry.Custom.cs" />
     <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\Binding\ActionBinding.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\Binding\ActiveBinding.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\Binding\AnchorPosition.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\Binding\BooleanBinding.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\Binding\BooleanLoadAssetBinding.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\Binding\CollectionBinding.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\Binding\ColorBinding.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\Binding\ItemCollectionBinding.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\Binding\NumericBinding.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\Binding\PropertyBinding.cs" />
     <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\Binding\SingleBinding.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\Binding\TextBinding.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\Binding\TextLoadAssetBinding.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\Binding\VectorBinding.cs" />
     <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\Core\BaseBinding.cs" />
     <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\Core\Context.cs" />
     <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\Core\IBaseBinding.cs" />
     <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\Core\IContext.cs" />
     <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\Core\ItemContext.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\Core\UICustomBehaviour.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\Enum\Check_Type.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\Enum\Modifier.cs" />
     <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\Model\Collection.cs" />
     <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\Model\CollectionGeneric.cs" />
     <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\Model\Property.cs" />
     <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\Model\PropertyGeneric.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\ModelView\ItemModelView.cs" />
     <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\ModelView\ModelView.cs" />
     <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\ModelView\ModelViewCore.cs" />
     <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\ModelView\RootModelView.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\Thread\MainThreadDispatcher.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\Thread\MainThreadDispatchHelper.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Binding\BindingCore\Thread\ThreadDispatchAction.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Binding\UGUIBinding\UGUIColorBinding.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Binding\UGUIBinding\UGUIImageBinding.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Binding\UGUIBinding\UGUIInputFieldBinding.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Binding\UGUIBinding\UGUIInteractableBinding.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Binding\UGUIBinding\UGUIItemCollectionBinding.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Binding\UGUIBinding\UGUILoopItemCollectionBinding.cs" />
     <Compile Include="Assets\GameMain\Scripts\Binding\UGUIBinding\UGUIOnClickBinding.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Binding\UGUIBinding\UGUIRawImageBinding.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Binding\UGUIBinding\UGUITextBinding.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Binding\UGUIBinding\UGUIToggleBinding.cs" />
     <Compile Include="Assets\GameMain\Scripts\Config\ConfigExtension.cs" />
     <Compile Include="Assets\GameMain\Scripts\CustomComponents\BuiltinData\BuiltinDataComponent.cs" />
     <Compile Include="Assets\GameMain\Scripts\CustomComponents\XLua\XLuaComponent.cs" />
@@ -164,6 +192,7 @@
     <Compile Include="Assets\GameMain\Scripts\UI\UGuiGroupHelper.cs" />
     <Compile Include="Assets\GameMain\Scripts\UI\UIExtension.cs" />
     <Compile Include="Assets\GameMain\Scripts\UI\UILogic\MainPage.cs" />
+    <Compile Include="Assets\GameMain\Scripts\UI\UILogic\TestPage.cs" />
     <Compile Include="Assets\GameMain\Scripts\UI\UILogic\UGuiFormModelGeneric.cs" />
     <Compile Include="Assets\GameMain\Scripts\UI\UILogic\UGuiFormPageGeneric.cs" />
     <Compile Include="Assets\GameMain\Scripts\Utility\AIUtility.cs" />
@@ -176,60 +205,6 @@
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
-    <Compile Include="Assets\Spine Examples\Other Examples\Animation Tester\SpineAnimationTesterTool.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\AttackSpineboy.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\DataAssetsFromExportsExample.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\DraggableTransform.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\FootSoldierExample.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Getting Started Scripts\BasicPlatformerController.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Getting Started Scripts\ConstrainedCamera.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Getting Started Scripts\Raptor.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Getting Started Scripts\SpineBeginnerTwo.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Getting Started Scripts\SpineBlinkPlayer.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Getting Started Scripts\SpineboyBeginnerInput.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Getting Started Scripts\SpineboyBeginnerModel.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Getting Started Scripts\SpineboyBeginnerView.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Getting Started Scripts\SpineboyTargetController.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Getting Started Scripts\TransitionDictionaryExample.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Goblins.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\HandleEventWithAudioExample.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\HeroEffectsHandlerExample.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\HurtFlashEffect.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\MaterialPropertyBlockExample.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\MaterialReplacementExample.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Mecanim as Logic\DummyMecanimControllerExample.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Mecanim as Logic\MecanimToAnimationHandleExample.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Mecanim as Logic\SkeletonAnimationHandleExample.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Mix and Match Character Customize\EquipAssetExample.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Mix and Match Character Customize\EquipButtonExample.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Mix and Match Character Customize\EquipsVisualsComponentExample.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Mix and Match Character Customize\EquipSystemExample.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\MixAndMatch.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\MixAndMatchGraphic.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\RaggedySpineboy.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\ReloadSceneOnKeyDown.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Rotator.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\BoneLocalOverride.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\CombinedSkin.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\Legacy\AtlasRegionAttacher.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\Legacy\CustomSkin.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\Legacy\SpriteAttacher.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\Sample VertexEffects\JitterEffectExample.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\Sample VertexEffects\TwoByTwoTransformEffectExample.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\SkeletonAnimationFixedTimestep.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\SkeletonAnimationMulti\SkeletonAnimationMulti.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\SkeletonColorInitialize.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\SlotTintBlackFollower.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Sample Components\SpineEventUnityHandler.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\SpawnFromSkeletonDataExample.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\SpawnSkeletonGraphicExample.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\Spineboy.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\SpineboyBodyTilt.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\SpineboyFacialExpression.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\SpineboyFootplanter.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\SpineboyFreeze.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\SpineboyPole.cs" />
-    <Compile Include="Assets\Spine Examples\Scripts\SpineGauge.cs" />
     <Compile Include="Assets\XLua\Src\CodeEmit.cs" />
     <Compile Include="Assets\XLua\Src\CopyByValue.cs" />
     <Compile Include="Assets\XLua\Src\DelegateBridge.cs" />
@@ -253,32 +228,19 @@
     <Compile Include="Assets\XLua\Src\TemplateEngine\TemplateEngine.cs" />
     <Compile Include="Assets\XLua\Src\TypeExtensions.cs" />
     <Compile Include="Assets\XLua\Src\Utils.cs" />
-    <None Include="Assets\Spine Examples\Spine Skeletons\Eyes\eyes.atlas.txt" />
     <None Include="Assets\Demigiant\DOTweenPro\readme.txt" />
     <None Include="Assets\GameMain\Configs\AssetBundleEditor.xml" />
-    <None Include="Assets\Spine Examples\Spine Skeletons\Gauge\Gauge.atlas.txt" />
     <None Include="Assets\GameMain\Configs\AssetBundleCollection.xml" />
     <None Include="Assets\GameMain\Configs\AssetBundleBuilder.xml" />
     <None Include="Assets\UnityGameFramework\Libraries\link.xml" />
-    <None Include="Assets\Spine Examples\Spine Skeletons\FootSoldier\FS_White.atlas.txt" />
     <None Include="Assets\UnityGameFramework\Libraries\GameFramework.xml" />
-    <None Include="Assets\Spine Examples\Spine Skeletons\Dragon\license.txt" />
-    <None Include="Assets\Spine Examples\Spine Skeletons\Hero\license.txt" />
-    <None Include="Assets\Spine Examples\Spine Skeletons\Goblins\goblins.atlas.txt" />
-    <None Include="Assets\Spine Examples\Spine Skeletons\Stretchyman\stretchyman-diffuse-pma.atlas.txt" />
     <None Include="Assets\GameMain\DataTables\Sound.txt" />
     <None Include="Assets\GameMain\Configs\DataTableCodeTemplate.txt" />
-    <None Include="Assets\Spine Examples\Spine Skeletons\Raptor\raptor.atlas.txt" />
-    <None Include="Assets\Spine Examples\Spine Skeletons\spineboy-unity\spineboy.atlas.txt" />
     <None Include="Assets\GameMain\DataTables\Entity.txt" />
-    <None Include="Assets\Spine Examples\Spine Skeletons\FootSoldier\license.txt" />
     <None Include="Assets\Spine\version.txt" />
     <None Include="Assets\XLua\Resources\xlua\util.lua.txt" />
-    <None Include="Assets\Spine Examples\Spine Skeletons\Raggedy Spineboy\Raggedy Spineboy.atlas.txt" />
-    <None Include="Assets\Spine Examples\Spine Skeletons\whirlyblendmodes\whirlyblendmodes.atlas.txt" />
     <None Include="Assets\GameMain\DataTables\Music.txt" />
     <None Include="Assets\Demigiant\DOTween\readme.txt" />
-    <None Include="Assets\Spine Examples\Spine Skeletons\Dragon\dragon.atlas.txt" />
     <None Include="Assets\GameMain\Lua\Require.lua.txt" />
     <None Include="Assets\XLua\Resources\perf\profiler.lua.txt" />
     <None Include="Assets\GameMain\DataTables\Scene.txt" />
@@ -289,40 +251,36 @@
     <None Include="Assets\GameMain\DataTables\UIForm.txt" />
     <None Include="Assets\XLua\Resources\perf\memory.lua.txt" />
     <None Include="Assets\GameMain\Configs\BuildSettings.xml" />
-    <None Include="Assets\Spine Examples\Spine Skeletons\spineboy-pro\spineboy-pro.atlas.txt" />
-    <None Include="Assets\Spine Examples\Spine Skeletons\Spineunitygirl\Doi.atlas.txt" />
     <None Include="Assets\GameMain\Configs\BuildInfo.txt" />
-    <None Include="Assets\Spine Examples\Spine Skeletons\Hero\hero-pro.atlas.txt" />
     <None Include="Assets\GameMain\DataTables\UISound.txt" />
     <None Include="Assets\XLua\CHANGELOG.txt" />
     <None Include="Assets\Demigiant\readme_DOTweenPro.txt" />
-    <None Include="Assets\Spine Examples\Spine Skeletons\FootSoldier\Equipment\Equipment.atlas.txt" />
     <Reference Include="Unity.RenderPipelines.Core.Editor">
-      <HintPath>F:/untiyProject/SG1/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+      <HintPath>F:/GitCommit/SG1/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>F:/untiyProject/SG1/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+      <HintPath>F:/GitCommit/SG1/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>F:/untiyProject/SG1/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>F:/GitCommit/SG1/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>F:/untiyProject/SG1/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>F:/GitCommit/SG1/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>F:/untiyProject/SG1/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>F:/GitCommit/SG1/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
-      <HintPath>F:/untiyProject/SG1/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+      <HintPath>F:/GitCommit/SG1/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-      <HintPath>F:/untiyProject/SG1/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+      <HintPath>F:/GitCommit/SG1/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>F:/untiyProject/SG1/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>F:/GitCommit/SG1/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>F:/untiyProject/SG1/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>F:/GitCommit/SG1/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/Program Files (x86)/untiy/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -526,40 +484,40 @@
       <HintPath>D:/Program Files (x86)/untiy/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="DemiLib">
-      <HintPath>F:/untiyProject/SG1/Assets/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
+      <HintPath>F:/GitCommit/SG1/Assets/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
     </Reference>
     <Reference Include="DOTween">
-      <HintPath>F:/untiyProject/SG1/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
+      <HintPath>F:/GitCommit/SG1/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="DOTweenPro">
-      <HintPath>F:/untiyProject/SG1/Assets/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
+      <HintPath>F:/GitCommit/SG1/Assets/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
     </Reference>
     <Reference Include="Common">
-      <HintPath>F:/untiyProject/SG1/Assets/GameMain/Libraries/Common.dll</HintPath>
+      <HintPath>F:/GitCommit/SG1/Assets/GameMain/Libraries/Common.dll</HintPath>
     </Reference>
     <Reference Include="LitJson">
-      <HintPath>F:/untiyProject/SG1/Assets/GameMain/Libraries/LitJson.dll</HintPath>
+      <HintPath>F:/GitCommit/SG1/Assets/GameMain/Libraries/LitJson.dll</HintPath>
     </Reference>
     <Reference Include="Photon3Unity3D">
-      <HintPath>F:/untiyProject/SG1/Assets/GameMain/Libraries/Photon3Unity3D.dll</HintPath>
+      <HintPath>F:/GitCommit/SG1/Assets/GameMain/Libraries/Photon3Unity3D.dll</HintPath>
     </Reference>
     <Reference Include="protobuf-net">
-      <HintPath>F:/untiyProject/SG1/Assets/GameMain/Libraries/protobuf-net.dll</HintPath>
+      <HintPath>F:/GitCommit/SG1/Assets/GameMain/Libraries/protobuf-net.dll</HintPath>
     </Reference>
     <Reference Include="GameFramework">
-      <HintPath>F:/untiyProject/SG1/Assets/UnityGameFramework/Libraries/GameFramework.dll</HintPath>
+      <HintPath>F:/GitCommit/SG1/Assets/UnityGameFramework/Libraries/GameFramework.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>F:/untiyProject/SG1/Assets/UnityGameFramework/Libraries/ICSharpCode.SharpZipLib.dll</HintPath>
+      <HintPath>F:/GitCommit/SG1/Assets/UnityGameFramework/Libraries/ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>F:/untiyProject/SG1/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>F:/GitCommit/SG1/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>F:/untiyProject/SG1/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>F:/GitCommit/SG1/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>F:/untiyProject/SG1/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>F:/GitCommit/SG1/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>D:/Program Files (x86)/untiy/Unity/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

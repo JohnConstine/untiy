@@ -7,10 +7,8 @@
     {
         Undefined = 0,
         
-        LoadingPage = 1,
-        
+        TestPage = 255,
+
         MainPage = 10,
-        
-        BattleFieldPage = 20,
     }
 }

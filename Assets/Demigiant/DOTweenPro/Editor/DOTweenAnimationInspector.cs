@@ -37,7 +37,7 @@ namespace DG.DOTweenEditor
 
         static readonly Dictionary<DOTweenAnimationType, Type[]> _AnimationTypeToComponent = new Dictionary<DOTweenAnimationType, Type[]>() {
             { DOTweenAnimationType.Move, new[] {
-#if true // PHYSICS_MARKER
+#if false // PHYSICS_MARKER
                 typeof(Rigidbody),
 #endif
 #if true // PHYSICS2D_MARKER
@@ -49,7 +49,7 @@ namespace DG.DOTweenEditor
                 typeof(Transform)
             }},
             { DOTweenAnimationType.Rotate, new[] {
-#if true // PHYSICS_MARKER
+#if false // PHYSICS_MARKER
                 typeof(Rigidbody),
 #endif
 #if true // PHYSICS2D_MARKER
@@ -62,7 +62,7 @@ namespace DG.DOTweenEditor
             { DOTweenAnimationType.Scale, new[] { typeof(Transform) } },
             { DOTweenAnimationType.Color, new[] {
                 typeof(Light),
-#if true // SPRITE_MARKER
+#if false // SPRITE_MARKER
                 typeof(SpriteRenderer),
 #endif
 #if true // UI_MARKER
@@ -72,7 +72,7 @@ namespace DG.DOTweenEditor
             }},
             { DOTweenAnimationType.Fade, new[] {
                 typeof(Light),
-#if true // SPRITE_MARKER
+#if false // SPRITE_MARKER
                 typeof(SpriteRenderer),
 #endif
 #if true // UI_MARKER

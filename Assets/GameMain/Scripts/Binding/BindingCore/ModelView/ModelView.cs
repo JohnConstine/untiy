@@ -16,6 +16,12 @@ namespace SG1
 
         private IContext m_Context;
 
+        protected IContext Context
+        {
+            get { return m_Context; }
+            set { m_Context = value; }
+        }
+
         public Property FindProperty(string path)
         {
             if (m_Context == null)
@@ -46,17 +52,19 @@ namespace SG1
             return m_CacheActions[path];
         }
 
-        public bool SetContext(IContext context)
+        public Collection FindCollection(string path)
         {
-            if (context == null)
+            if (m_Context == null)
             {
-                Log.Error("{0} : {1} is invalid", gameObject.name, "Context");
-                return false;
+                return (Collection) null;
             }
 
-            m_Context = context;
-            
-            return true;
+            if (!m_CacheCollections.ContainsKey(path))
+            {
+                m_CacheCollections[path] = Find(m_Context, path, NodeToCollection);
+            }
+
+            return m_CacheCollections[path];
         }
     }
 }

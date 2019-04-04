@@ -1,5 +1,6 @@
 using System;
 using GameFramework;
+using UnityEngine;
 
 namespace SG1
 {
@@ -73,6 +74,11 @@ namespace SG1
         public override string ToString()
         {
             return Utility.Text.Format("Type:{0} Value:{1}", typeof(T), m_Value.ToString());
+        }
+
+        public override object GetRowValue()
+        {
+            return m_Value;
         }
     }
 }
