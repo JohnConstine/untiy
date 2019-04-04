@@ -25,30 +25,20 @@ namespace SG1
         
     }
 
-    public class GoodsItem : ItemContext
+    public class MainPageModel : UGuiFormModel<MainPage, MainPageModel>
     {
-        #region GoodsProperty
+        #region LoopCollect
 
-        private readonly Property<string> _privateGoodsProperty = new Property<string>();
+        private readonly Collection<Item> _privateLoopCollection = new Collection<Item>();
 
-        public Property<string> GoodsProperty
+        public Collection<Item> Loop
         {
-            get { return _privateGoodsProperty; }
-        }
-
-        public string Goods
-        {
-            get { return _privateGoodsProperty.GetValue(); }
-            set { _privateGoodsProperty.SetValue(value); }
+            get { return _privateLoopCollection; }
         }
 
         #endregion
 
         
-    }
-
-    public class MainPageModel : UGuiFormModel<MainPage, MainPageModel>
-    {
         #region ItemCollect
 
         private readonly Collection<Item> _privateItemCollection = new Collection<Item>();
@@ -162,17 +152,6 @@ namespace SG1
 
         #endregion
 
-        #region GoodsItemCollect
-
-        private readonly Collection<GoodsItem> _privateGoodsItemCollection = new Collection<GoodsItem>();
-
-        public Collection<GoodsItem> GoodsItem
-        {
-            get { return _privateGoodsItemCollection; }
-        }
-
-        #endregion
-        
         public void Test()
         {
             Debug.Log("Test Succeed");
@@ -182,6 +161,8 @@ namespace SG1
         }
     }
 
+    
+    
     public class MainPage : UGuiFormPage<MainPage, MainPageModel>
     {
         protected override void OnOpen(object userData)
@@ -196,16 +177,12 @@ namespace SG1
 
             for (int i = 0; i < 10; i++)
             {
-//                Model.Item.Add(new Item() {name = i.ToString()});
-                  GoodsItem goodsItem = new GoodsItem()
-                  {
-                      Goods = i.ToString()
-                  };
-                  
-                  Model.GoodsItem.Add(goodsItem);
-                  
+                Model.Item.Add(new Item() {name = i.ToString()});
             }
-
+            for (int j = 0; j < 8; j++)
+            {
+                Model.Loop.Add(new Item(){name = j.ToString()});
+            }
             Model.ActiveProperty.OnValueChange += OnActiveChange;
         }
 

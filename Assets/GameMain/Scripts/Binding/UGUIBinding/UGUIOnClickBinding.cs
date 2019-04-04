@@ -33,10 +33,21 @@ namespace SG1
             set { m_Button = value; }
         }
 
-        protected override void Awake()
+        protected override bool Bind()
         {
-            base.Awake();
-            m_Button.onClick.AddListener(OnClick);
+            if (base.Bind())
+            {
+                m_Button.onClick.AddListener(OnClick);
+                return true;
+            }
+
+            return false;
+        }
+
+        protected override void Unbind()
+        {
+            m_Button.onClick.RemoveListener(OnClick);
+            base.Unbind();
         }
 
         private void OnClick()

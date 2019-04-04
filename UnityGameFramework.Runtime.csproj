@@ -484,64 +484,64 @@
       <HintPath>D:/Program Files (x86)/untiy/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="DemiLib">
-      <HintPath>F:/GitCommit/SG1/Assets/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Assets/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
     </Reference>
     <Reference Include="DemiEditor">
-      <HintPath>F:/GitCommit/SG1/Assets/Demigiant/DemiLib/Core/Editor/DemiEditor.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Assets/Demigiant/DemiLib/Core/Editor/DemiEditor.dll</HintPath>
     </Reference>
     <Reference Include="DOTween">
-      <HintPath>F:/GitCommit/SG1/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="DOTweenEditor">
-      <HintPath>F:/GitCommit/SG1/Assets/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Assets/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
     </Reference>
     <Reference Include="DOTweenPro">
-      <HintPath>F:/GitCommit/SG1/Assets/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Assets/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
     </Reference>
     <Reference Include="DOTweenProEditor">
-      <HintPath>F:/GitCommit/SG1/Assets/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Assets/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll</HintPath>
     </Reference>
     <Reference Include="Common">
-      <HintPath>F:/GitCommit/SG1/Assets/GameMain/Libraries/Common.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Assets/GameMain/Libraries/Common.dll</HintPath>
     </Reference>
     <Reference Include="LitJson">
-      <HintPath>F:/GitCommit/SG1/Assets/GameMain/Libraries/LitJson.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Assets/GameMain/Libraries/LitJson.dll</HintPath>
     </Reference>
     <Reference Include="Photon3Unity3D">
-      <HintPath>F:/GitCommit/SG1/Assets/GameMain/Libraries/Photon3Unity3D.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Assets/GameMain/Libraries/Photon3Unity3D.dll</HintPath>
     </Reference>
     <Reference Include="protobuf-net">
-      <HintPath>F:/GitCommit/SG1/Assets/GameMain/Libraries/protobuf-net.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Assets/GameMain/Libraries/protobuf-net.dll</HintPath>
     </Reference>
     <Reference Include="Excel">
-      <HintPath>F:/GitCommit/SG1/Assets/Plugins/Editor/Excel2Unity/Excel.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Assets/Plugins/Editor/Excel2Unity/Excel.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>F:/GitCommit/SG1/Assets/Plugins/Editor/Excel2Unity/Newtonsoft.Json.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Assets/Plugins/Editor/Excel2Unity/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="JetBrains.Rider.Unity.Editor.Plugin.Repacked">
-      <HintPath>F:/GitCommit/SG1/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll</HintPath>
     </Reference>
     <Reference Include="GameFramework">
-      <HintPath>F:/GitCommit/SG1/Assets/UnityGameFramework/Libraries/GameFramework.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Assets/UnityGameFramework/Libraries/GameFramework.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>F:/GitCommit/SG1/Assets/UnityGameFramework/Libraries/ICSharpCode.SharpZipLib.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Assets/UnityGameFramework/Libraries/ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
-      <HintPath>F:/GitCommit/SG1/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>F:/GitCommit/SG1/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>F:/GitCommit/SG1/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>F:/GitCommit/SG1/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Purchasing">
-      <HintPath>F:/GitCommit/SG1/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>D:/Program Files (x86)/untiy/Unity/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>

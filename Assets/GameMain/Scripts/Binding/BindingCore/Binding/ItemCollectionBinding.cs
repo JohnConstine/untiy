@@ -1,5 +1,6 @@
 using UnityEngine;
 
+#pragma warning disable 0649
 namespace SG1
 {
     public abstract class ItemCollectionBinding : CollectionBinding

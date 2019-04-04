@@ -115,6 +115,7 @@
     <Compile Include="Assets\GameMain\Scripts\Binding\UGUIBinding\UGUIInputFieldBinding.cs" />
     <Compile Include="Assets\GameMain\Scripts\Binding\UGUIBinding\UGUIInteractableBinding.cs" />
     <Compile Include="Assets\GameMain\Scripts\Binding\UGUIBinding\UGUIItemCollectionBinding.cs" />
+    <Compile Include="Assets\GameMain\Scripts\Binding\UGUIBinding\UGUILoopCollectionBinding.cs" />
     <Compile Include="Assets\GameMain\Scripts\Binding\UGUIBinding\UGUILoopItemCollectionBinding.cs" />
     <Compile Include="Assets\GameMain\Scripts\Binding\UGUIBinding\UGUIOnClickBinding.cs" />
     <Compile Include="Assets\GameMain\Scripts\Binding\UGUIBinding\UGUIRawImageBinding.cs" />
@@ -256,31 +257,31 @@
     <None Include="Assets\XLua\CHANGELOG.txt" />
     <None Include="Assets\Demigiant\readme_DOTweenPro.txt" />
     <Reference Include="Unity.RenderPipelines.Core.Editor">
-      <HintPath>F:/GitCommit/SG1/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>F:/GitCommit/SG1/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>F:/GitCommit/SG1/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>F:/GitCommit/SG1/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>F:/GitCommit/SG1/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
-      <HintPath>F:/GitCommit/SG1/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-      <HintPath>F:/GitCommit/SG1/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>F:/GitCommit/SG1/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>F:/GitCommit/SG1/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/Program Files (x86)/untiy/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -484,40 +485,40 @@
       <HintPath>D:/Program Files (x86)/untiy/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="DemiLib">
-      <HintPath>F:/GitCommit/SG1/Assets/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Assets/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
     </Reference>
     <Reference Include="DOTween">
-      <HintPath>F:/GitCommit/SG1/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="DOTweenPro">
-      <HintPath>F:/GitCommit/SG1/Assets/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Assets/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
     </Reference>
     <Reference Include="Common">
-      <HintPath>F:/GitCommit/SG1/Assets/GameMain/Libraries/Common.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Assets/GameMain/Libraries/Common.dll</HintPath>
     </Reference>
     <Reference Include="LitJson">
-      <HintPath>F:/GitCommit/SG1/Assets/GameMain/Libraries/LitJson.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Assets/GameMain/Libraries/LitJson.dll</HintPath>
     </Reference>
     <Reference Include="Photon3Unity3D">
-      <HintPath>F:/GitCommit/SG1/Assets/GameMain/Libraries/Photon3Unity3D.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Assets/GameMain/Libraries/Photon3Unity3D.dll</HintPath>
     </Reference>
     <Reference Include="protobuf-net">
-      <HintPath>F:/GitCommit/SG1/Assets/GameMain/Libraries/protobuf-net.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Assets/GameMain/Libraries/protobuf-net.dll</HintPath>
     </Reference>
     <Reference Include="GameFramework">
-      <HintPath>F:/GitCommit/SG1/Assets/UnityGameFramework/Libraries/GameFramework.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Assets/UnityGameFramework/Libraries/GameFramework.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>F:/GitCommit/SG1/Assets/UnityGameFramework/Libraries/ICSharpCode.SharpZipLib.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Assets/UnityGameFramework/Libraries/ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>F:/GitCommit/SG1/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>F:/GitCommit/SG1/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>F:/GitCommit/SG1/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>F:/untiyProject/SG1/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>D:/Program Files (x86)/untiy/Unity/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
